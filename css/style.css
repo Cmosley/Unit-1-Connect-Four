@@ -1,0 +1,68 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 300;
+    color: blue;
+}
+
+#board-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 10vmin);
+    grid-template-rows: repeat(6, 10vmin);
+    /* testing */
+    /* border-width: 5px;
+    border-color: black; */
+}
+
+div {
+    border: 3px solid black;
+    font-size: 8vmin;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#menu {
+    margin-top: 3vmin;
+    display: flex;
+}
+
+.player {
+    width: 20vmin;
+    height: 10vmin;
+}
+
+#display {
+    width: 30vmin;
+}
+
+#center-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+}
+
+#one {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#two {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#winMsg {
+    display: none;
+    border: none;
+}
+
