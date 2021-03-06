@@ -30,8 +30,9 @@ const winMsg = document.getElementById('winMsg')
 
 /*----- event listeners -----*/ 
 
-board.forEach(circle => {
+board.forEach(e, circle => {
     circle.addEventListener('click', pieceDrop)
+    console.log(e)
 });
 
 /*----- functions -----*/

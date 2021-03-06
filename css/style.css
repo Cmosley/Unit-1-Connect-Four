@@ -8,27 +8,72 @@ body {
 
 }
 
+/* Above game board elements */
+
 h1 {
     font-size: 4rem;
     font-weight: 300;
     color: blue;
 }
 
-#board-grid {
+/* Game board  elements  */
+
+.grid {
     display: grid;
     grid-template-columns: repeat(7, 10vmin);
     grid-template-rows: repeat(6, 10vmin);
-    /* testing */
-    /* border-width: 5px;
-    border-color: black; */
+    background-color: black;
+    margin: 0 auto;
+    justify-content: center;
 }
 
-div {
-    border: 3px solid black;
-    font-size: 8vmin;
+
+
+#cell  {
+    border: 5px solid rgb(0, 0, 0);
+    background-color: white;
+    border-radius: 50%;
     text-align: center;
     vertical-align: middle;
+    outline: 5px solid black;
 }
+
+#yellow-piece {
+    display: none;
+    height: 8vmin;
+    width: 8vmin;
+    border-radius: 50%;
+    background-color: yellow;
+}
+
+#red-piece {
+    display: none;
+    height: 8vmin;
+    width: 8vmin;
+    border-radius: 50%;
+    background-color: red;
+}
+
+#column-drop {
+    display: grid;
+    grid-template-columns: repeat(7, 10vmin);
+    grid-template-rows: 100%;
+    height: 10vmin;
+    background-color: blue;
+    border: none;
+    margin-bottom: 10px;
+
+}
+
+#column-drop:hover {
+    display: grid;
+    grid-template-columns: 7 10vmin;
+    grid-template-rows: inherit;
+    background-color: rgb(1, 250, 34);
+}
+
+/* Below game board elements  */
+
 
 #menu {
     margin-top: 3vmin;
@@ -52,11 +97,13 @@ div {
 }
 
 #one {
+    background-color: red;
     display: flex;
     justify-content: flex-start;
 }
 
 #two {
+    background-color: yellow;
     display: flex;
     justify-content: flex-end;
 }
