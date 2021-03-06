@@ -59,17 +59,21 @@ h1 {
     grid-template-columns: repeat(7, 10vmin);
     grid-template-rows: 100%;
     height: 10vmin;
-    background-color: blue;
     border: none;
     margin-bottom: 10px;
-
 }
 
-#column-drop:hover {
-    display: grid;
-    grid-template-columns: 7 10vmin;
-    grid-template-rows: inherit;
-    background-color: rgb(1, 250, 34);
+.cell-drop {
+    border: none;
+    background-color: white;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    gap: 10px;
+}
+
+.cell-drop:hover {
+    background-color: red;
 }
 
 /* Below game board elements  */
