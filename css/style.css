@@ -29,7 +29,7 @@ h1 {
 
 
 
-#cell  {
+.cell  {
     border: 5px solid rgb(0, 0, 0);
     background-color: white;
     border-radius: 50%;
@@ -38,16 +38,16 @@ h1 {
     outline: 5px solid black;
 }
 
-#yellow-piece {
-    display: none;
+.yellow-piece {
+    
     height: 8vmin;
     width: 8vmin;
     border-radius: 50%;
     background-color: yellow;
 }
 
-#red-piece {
-    display: none;
+.red-piece {
+    
     height: 8vmin;
     width: 8vmin;
     border-radius: 50%;
