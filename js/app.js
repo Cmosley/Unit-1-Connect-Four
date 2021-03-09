@@ -76,15 +76,14 @@ function render () {
     })
 }
 
-// PLAYER_TURN[grid[idx]]
-function checkWin (player) {
+function checkWin (p) {
     // check columns for 4 in a row
     let combo = 0;
     for(let i =0; i < 42; i+=7){
         for(let k=0; k < 7; k++){
             let cell = gridBoxes[`${i+k}`];
             // console.log(cell)
-            if(cell.className === `${PLAYER_TURN[turn]}`){
+            if(cell.className.includes(`${p}`)){
                 combo++
             } else {
                 combo = 0;
@@ -102,8 +101,8 @@ function checkWin (player) {
     for(let i =0; i < 7; i++){
         for(let k=0; k < 42; k+=7){
             let cell = gridBoxes[`${i+k}`];
-            // console.log(cell)
-            if(cell.className === `${PLAYER_TURN[turn]}`){
+            // console.log(cell.className)
+            if(cell.className.includes(`${p}`)){
                 combo++
             } else {
                 combo = 0;
@@ -115,23 +114,45 @@ function checkWin (player) {
         }
         combo = 0;
     }
-    // check diag
 
+    // check diag
+    // scans the grid in a 4x4 square
+    let topLeft = 0;
+    let topRight = topLeft + 3;
+    console.log(topLeft)
+    for(let i = 0; i <3; i++){
+        for(let k = 0; k < 4; k++){
+            if(gridBoxes[`${i+k+topLeft}`].className.includes(p)
+            &&
+            gridBoxes[`${i+k+topLeft+8}`].className.includes(p)
+            &&
+            gridBoxes[`${i+k+topLeft+16}`].className.includes(p)
+            &&
+            gridBoxes[`${i+k+topLeft+24}`].className.includes(p)){
+                return true;
+            }
+
+            if(gridBoxes[`${i+k+topRight}`].className.includes(p)
+            &&
+            gridBoxes[`${i+k+topRight+6}`].className.includes(p)
+            &&
+            gridBoxes[`${i+k+topRight+12}`].className.includes(p)
+            &&
+            gridBoxes[`${i+k+topRight+18}`].className.includes(p)){
+                return true;
+            }
+
+            // inner loop to test 4x4 square
+            topLeft++;
+            topRight = topLeft + 3;
+        }
+        // outer loop to move the 4x4 square 
+        topLeft = i * 7 + 7;
+        topRight = topLeft + 3;
+    }
 
     return false;
 }        
-    
-    
-
-    
-
-    // check diagnoally for 4 in a row
-
-
-// grid functionality 
-
-//  1. Each row is an array, with the bottom of the row being the last element in array. Each array would need to inialized as empty, then use index of 
-// array to match corresponding div on front end 
 
 // init function 
 
@@ -153,4 +174,3 @@ function init () {
 }
 
 init();
- 
