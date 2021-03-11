@@ -42,7 +42,7 @@ https://docs.google.com/document/d/1OlDkcv85HmsQnfWStfC1UPh5yNXA0P46CUK4NEEYJ6M/
 - Git 
 
 ## Credits:
-- Custom background https://leaverou.github.io/css3patterns/#upholstery Nate Engel
+- Background img https://www.wallpapertip.com/wpic/TxwRho_wood-table-blur-background/
 
 ## Pseudocode:
 ![Pseduo code 1/2](images/pseudo1.jpg)
@@ -59,6 +59,7 @@ https://docs.google.com/document/d/1OlDkcv85HmsQnfWStfC1UPh5yNXA0P46CUK4NEEYJ6M/
 
 ## Stretch Goals:
 - Add visual of piece being dropped from top to cell location
+- Enhance visuals for game pieces
 - Add a random column "Easy" AI 
 - Implement a minimax algo "Hard" AI 
 - Re-construct backend to allow for cross browser multiplayer
