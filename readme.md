@@ -1,20 +1,3 @@
-Project Planning
-
-https://docs.google.com/document/d/1OlDkcv85HmsQnfWStfC1UPh5yNXA0P46CUK4NEEYJ6M/edit?usp=sharing
-
-☐ **<Your game’s title>**: A description of your game. Background info about why you chose the game is a nice touch.
-
-☐ **Getting Started**: Include a link to your deployed game and any instructions you deem important.
-
-☐ **Screenshot(s):** Images of your actual game.
-
-☐ **Technologies Used**: List of the technologies used, e.g., JavaScript, HTML, CSS…
-
-☐ **Next Steps**: Planned future enhancements (icebox items).
-
-
-
-
 # Connect 4 
 ##
 ## Objective:
@@ -45,8 +28,8 @@ https://docs.google.com/document/d/1OlDkcv85HmsQnfWStfC1UPh5yNXA0P46CUK4NEEYJ6M/
 - Background img https://www.wallpapertip.com/wpic/TxwRho_wood-table-blur-background/
 
 ## Pseudocode:
-![Pseduo code 1/2](images/pseudo1.jpg)
-![Pseduo code 2/2](images/pseudo2.jpg)
+![Pseduo code 1/2](images/pseudo1.png)
+![Pseduo code 2/2](images/pseudo2.png)
 
 
 ## Minimum Viable Product:
