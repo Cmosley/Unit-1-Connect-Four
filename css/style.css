@@ -4,7 +4,10 @@ body {
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    background-color: white;
+    /* background-color: white; */
+    background-image: url(../images/wallpapertip_table.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%
 
 }
 

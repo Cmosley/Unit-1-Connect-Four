@@ -38,6 +38,7 @@ gridBoxes.forEach(circle => {
     // console.log(gridBoxes)
 });
 
+resetBtn.addEventListener('click', init)
 
 
 /*----- functions -----*/
@@ -92,7 +93,6 @@ function checkWin (p) {
             if(combo >= 4) {
                 return true;
             }
-            
         }
         combo = 0;
     }
@@ -167,6 +167,8 @@ function init () {
         null,null,null,null,null,null,null,
         null,null,null,null,null,null,null,
     ];
+    // gridBoxes.classList.remove('red-piece');
+    // gridBoxes.classList.remove('yellow-piece');
     winner = false;
     render();
     gameDivID();
