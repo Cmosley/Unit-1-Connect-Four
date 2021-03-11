@@ -14,12 +14,13 @@ body {
 
 /* Above game board elements */
 
+/* shadow effects from https://codepen.io/fielding/pen/wYPRjj */
 h1 {
     margin: auto;
     text-align: center;
     font-size: 7rem;
     font-family: 'Luckiest Guy';
-    color: rgb(253, 253, 253);
+    color: rgb(255, 255, 255);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-shadow:   0px -6px 0 #212121,  

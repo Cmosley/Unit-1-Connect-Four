@@ -164,8 +164,9 @@ function init () {
         null,null,null,null,null,null,null,
         null,null,null,null,null,null,null,
     ];
-    // gridBoxes.classList.remove('red-piece');
-    // gridBoxes.classList.remove('yellow-piece');
+    gridBoxes.forEach(cells => {
+        if(cells.setAttribute('class', 'cell'))
+    })
     winner = false;
     render();
     gameDivID();
