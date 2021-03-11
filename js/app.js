@@ -56,7 +56,6 @@ function gameDivID () {
 function setPiece (e) {
     // gets index of cell to 'drop' piece into
     let divID = (parseInt(e.target.id))
-    // console.log(divID)
     if (grid[divID] === null){
         const clickedDiv = document.getElementById(divID)
         clickedDiv.classList.add(`${PLAYER_TURN[turn]}`)
@@ -65,15 +64,13 @@ function setPiece (e) {
                 winner = PLAYER_TURN[turn]
             }
             turn *= -1
-    // winner = checkWin(PLAYER_TURN[turn])
     render();    
     }
 }
 
 function render () {
-    // update game cell with current players game piece color
     gridBoxes.forEach((cell, idx) => {
-        // console.log(cell)
+
     })
 }
 

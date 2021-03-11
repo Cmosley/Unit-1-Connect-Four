@@ -6,7 +6,7 @@ body {
     flex-direction: column;
     /* background-color: white; */
     background-image: url(../images/wallpapertip_table.jpg);
-    background-repeat: no-repeat;
+    background-repeat:inherit;
     background-size: 100%
     
 
@@ -15,10 +15,36 @@ body {
 /* Above game board elements */
 
 h1 {
-    font-size: 4rem;
-    font-weight: 300;
-    color: blue;
-}
+    margin: auto;
+    text-align: center;
+    font-size: 7rem;
+    font-family: 'Luckiest Guy';
+    color: rgb(253, 253, 253);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow:   0px -6px 0 #212121,  
+                   0px -6px 0 #212121,
+                   0px  6px 0 #212121,
+                   0px  6px 0 #212121,
+                  -6px  0px 0 #212121,  
+                   6px  0px 0 #212121,
+                  -6px  0px 0 #212121,
+                   6px  0px 0 #212121,
+                  -6px -6px 0 #212121,  
+                   6px -6px 0 #212121,
+                  -6px  6px 0 #212121,
+                   6px  6px 0 #212121,
+                  -6px  18px 0 #212121,
+                   0px  18px 0 #212121,
+                   6px  18px 0 #212121,
+                   0 19px 1px rgba(0,0,0,.1),
+                   0 0 6px rgba(0,0,0,.1),
+                   0 6px 3px rgba(0,0,0,.3),
+                   0 12px 6px rgba(0,0,0,.2),
+                   0 18px 18px rgba(0,0,0,.25),
+                   0 24px 24px rgba(0,0,0,.2),
+                   0 36px 36px rgba(0,0,0,.15);
+  }
 
 /* Game board  elements  */
 
@@ -120,4 +146,5 @@ h1 {
     display: none;
     border: none;
 }
+
 
