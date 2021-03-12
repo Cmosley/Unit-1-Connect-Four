@@ -16,6 +16,16 @@ const boardCols = [
     [6,13,20,27,34,41]
 ]
 
+const dropSound = new Audio("../audio/piece-drop.mp3"); 
+const resetSound = new Audio("../audio/reset-drop.mp3"); 
+const button = document.getElementById('play');
+button.addEventListener('click', playSound);
+     
+function playSound() { 
+    // resetSound.src = "../audio/reset-drop.mp3" 
+    resetSound.play() 
+} 
+
 /*----- app's state (variables) -----*/ 
 let grid, winner, turn, count
 
@@ -64,8 +74,14 @@ function setPiece (e) {
                 winner = PLAYER_TURN[turn]
             }
             turn *= -1
-    render();    
+    render();   
+    dropSound.play() 
     }
+}
+
+function checkValid(n) {
+    let divID = (parseInt(n)) 
+    console.log()
 }
 
 function render () {
@@ -86,7 +102,7 @@ function checkWin (p) {
             } else {
                 combo = 0;
             }
-            console.log(`columns: ${combo}`)
+            // console.log(`columns: ${combo}`)
             if(combo >= 4) {
                 return true;
             }
@@ -104,12 +120,13 @@ function checkWin (p) {
             } else {
                 combo = 0;
             }
-            console.log(`rows + ${combo}`)
+            // console.log(`rows + ${combo}`)
             if(combo >= 4) {
                 return true;
             }
         }
         combo = 0;
+        console.log(combo)
     }
 
     // check diag
@@ -165,8 +182,10 @@ function init () {
         null,null,null,null,null,null,null,
     ];
     gridBoxes.forEach(cells => {
-        if(cells.setAttribute('class', 'cell'))
+        if(cells.setAttribute('class', 'cell'));
     })
+    // gridBoxes.classList.remove('red-piece');
+    // gridBoxes.classList.remove('yellow-piece');
     winner = false;
     render();
     gameDivID();
