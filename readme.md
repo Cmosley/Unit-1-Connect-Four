@@ -28,6 +28,7 @@
 - Background Img https://www.wallpapertip.com/wpic/TxwRho_wood-table-blur-background/
 - Coin Rotation https://stackoverflow.com/questions/35607055/html5-rotate-animation-how-to-show-the-other-side-of-the-coin
 - H1 Styling https://codepen.io/fielding/pen/wYPRjj
+- Sound "You win" https://www.youtube.com/watch?v=sg763OgGdqI
 
 ## Pseudocode:
 ![Pseduo code 1/2](images/pseudo1.png)
@@ -36,7 +37,8 @@
 
 ## Minimum Viable Product:
 - As a user, I should be able to face off head to head with someone, alternating turns
-- As a user, I should be able to place my game piece where I want it to go
+- As a user, I should be able to place my game piece in a valid spot
+- As a user, I should know when it is my turn 
 - As a user, I should be able to know when I win or lose the game
 - As a user, I should be able to reset the board to start a new game
 - As a user, I should be able to see the instructions pop up when "how to play" is clicked

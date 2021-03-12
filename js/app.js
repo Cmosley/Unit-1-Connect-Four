@@ -1,3 +1,4 @@
+
 /*----- constants -----*/ 
 
 PLAYER_TURN = {
@@ -5,24 +6,6 @@ PLAYER_TURN = {
     '1' : 'yellow-piece',
     '-1' : 'red-piece'
 }
-
-// const boardCols = [
-//     [0,7,14,21,28,35],
-//     [1,8,15,22,29,36],
-//     [2,9,16,23,30,37],
-//     [3,10,17,24,31,38],
-//     [4,11,18,25,32,39],
-//     [5,12,19,26,33,40],
-//     [6,13,20,27,34,41]
-// ]
-
-// let x = 0
-// for (let index = 0; index < boardCols.length; index++) {
-//     const element = boardCols[index];
-//     console.log(element[1])
-    
-// }
-
 
 const dropSound = new Audio("../audio/piece-drop.mp3"); 
 const resetSound = new Audio("../audio/reset-drop.mp3"); 
@@ -43,6 +26,8 @@ const messageDiv = document.getElementById('message')
 const playerOne = document.getElementById('one')
 const playerTwo = document.getElementById('two')
 const gridBox = document.querySelector('section')
+const linkFav = document.querySelector("link[rel~='icon']")
+
 
 /*----- event listeners -----*/ 
 
@@ -96,6 +81,7 @@ function setPiece (e) {
     playerTwo.innerHTML = ""
     gridBox.classList.add('shadow-yellow')
     gridBox.classList.remove('shadow-red')
+    linkFav.href = "images/y-favicon-32x32.png"
 
     } else {
         playerTwo.classList.add('coin')
@@ -104,9 +90,8 @@ function setPiece (e) {
         playerOne.innerHTML = ""
         gridBox.classList.remove('shadow-yellow')
         gridBox.classList.add('shadow-red')
-
+        linkFav.href = "images/r-favicon-32x32.png"
     }
-
 }
 
 function checkValid(n) {
@@ -233,12 +218,22 @@ function init () {
     gridBoxes.forEach(cells => {
         if(cells.setAttribute('class', 'cell'));
     })
+    // reset player turn styling 
+    playerOne.classList.add('coin')
+    playerOne.innerHTML = "GO"
+    playerTwo.classList.remove('coin')
+    playerTwo.innerHTML = ""
+    gridBox.classList.add('shadow-yellow')
+    gridBox.classList.remove('shadow-red')
+    linkFav.href = "images/y-favicon-32x32.png"
+    // 
+    messageDiv.innerHTML = ""
     winner = 0;
     render();
     gameDivID();
+    
     
 }
 
 init();
 
-// https://www.youtube.com/watch?v=sg763OgGdqI
