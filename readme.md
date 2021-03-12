@@ -25,7 +25,9 @@
 - Git 
 
 ## Credits:
-- Background img https://www.wallpapertip.com/wpic/TxwRho_wood-table-blur-background/
+- Background Img https://www.wallpapertip.com/wpic/TxwRho_wood-table-blur-background/
+- Coin Rotation https://stackoverflow.com/questions/35607055/html5-rotate-animation-how-to-show-the-other-side-of-the-coin
+- H1 Styling https://codepen.io/fielding/pen/wYPRjj
 
 ## Pseudocode:
 ![Pseduo code 1/2](images/pseudo1.png)

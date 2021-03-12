@@ -40,6 +40,9 @@ const resetBtn = document.getElementById('reset')
 const howToPlay = document.getElementById('how-to')
 const winMsg = document.getElementById('winMsg')
 const messageDiv = document.getElementById('message')
+const playerOne = document.getElementById('one')
+const playerTwo = document.getElementById('two')
+const gridBox = document.querySelector('section')
 
 /*----- event listeners -----*/ 
 
@@ -86,6 +89,24 @@ function setPiece (e) {
         dropSound.play() 
         }
     }
+    if (turn === 1) {
+    playerOne.classList.add('coin')
+    playerOne.innerHTML = "GO"
+    playerTwo.classList.remove('coin')
+    playerTwo.innerHTML = ""
+    gridBox.classList.add('shadow-yellow')
+    gridBox.classList.remove('shadow-red')
+
+    } else {
+        playerTwo.classList.add('coin')
+        playerTwo.innerHTML = "GO"
+        playerOne.classList.remove('coin')
+        playerOne.innerHTML = ""
+        gridBox.classList.remove('shadow-yellow')
+        gridBox.classList.add('shadow-red')
+
+    }
+
 }
 
 function checkValid(n) {
@@ -108,13 +129,10 @@ function checkValid(n) {
     return false;
 }
 
-
-
 function render () {
     gridBoxes.forEach((cell, idx) => {
     if (!winner ) {
-        // 4.2.2.1) If winner has a value other than null (game still in progress), render whose turn it is - use the color name for the player, converting it to upper case.
-        messageDiv.innerText = `GO ${PLAYER_TURN[turn]}!`
+        
       } else if (winner === 2) {
         // 4.2.2.2) If winner is equal to 'T' (tie), render a tie message.
         messageDiv.innerText = `Nobody wins!`

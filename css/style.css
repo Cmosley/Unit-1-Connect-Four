@@ -17,7 +17,7 @@ body {
 /* ------------------------- */
 
 
-/* shadow effects from https://codepen.io/fielding/pen/wYPRjj */
+/* h1 styling from https://codepen.io/fielding/pen/wYPRjj */
 h1 {
     margin: auto;
     text-align: center;
@@ -52,8 +52,10 @@ h1 {
 
 #message {
     margin: auto;
-    color: rgb(0, 0, 0);
-    font-size: 3rem;
+    color: rgb(246, 240, 240);
+    font-size: rem;
+    text-transform: uppercase;
+    background-color: black;
 }
 
 
@@ -73,6 +75,19 @@ h1 {
     gap: 1.5%;
     width: calc(69vmin);
     height: calc(60vmin);
+    border-left: 
+}
+
+.shadow-yellow {
+    -webkit-box-shadow: -18px 2px 5px -6px rgba(232,240,5,1);
+    -moz-box-shadow: -18px 2px 5px -6px rgba(232,240,5,1);
+    box-shadow: -18px 2px 5px -6px rgba(232,240,5,1);
+}
+
+.shadow-red {
+    -webkit-box-shadow: 18px 2px 5px -6px rgba(240,3,34,1);
+    -moz-box-shadow: 18px 2px 5px -6px rgba(240,3,34,1);
+    box-shadow: 18px 2px 5px -6px rgba(240,3,34,1);
 }
 
 .cell:hover {
@@ -151,13 +166,16 @@ h1 {
 }
 
 #one {
+    color: black;
+    font-weight: bold;
+    font-size: 2em;
     display: grid;
     height: 8vmin;
     width: 8vmin;
     border-radius: 50%;
     background-color: yellow;
     justify-content: center;
-    /* grid-area: one; */
+    align-items: center;
 }
 
 #right-menu{
@@ -168,13 +186,16 @@ h1 {
 }
 
 #two {
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
     display: grid;
     height: 8vmin;
     width: 8vmin;
     border-radius: 50%;
     background-color: red;
     justify-content: center;
-    /* grid-area: two; */
+    align-items: center;
 }
 
 #reset {
@@ -216,7 +237,9 @@ h1 {
 emboss "4" onto coins
 https://www.midwinter-dg.com/permalink-7-great-css-based-text-effects-using-the-text-shadow-property_2011-03-03.html
 
+Coin Rotation from: 
 https://stackoverflow.com/questions/35607055/html5-rotate-animation-how-to-show-the-other-side-of-the-coin
+*/
 
 @keyframes rotation {
     0% {
@@ -238,10 +261,6 @@ https://stackoverflow.com/questions/35607055/html5-rotate-animation-how-to-show-
   }
   .coin {
     position: relative;
-    top: 25px;
-    left: 25px;
-    width: 50px;
-    height: 50px;
     text-align: center;
     line-height: 50px;
     animation-name: rotation;
@@ -251,24 +270,5 @@ https://stackoverflow.com/questions/35607055/html5-rotate-animation-how-to-show-
     transform: rotateY(0deg);
     transform-style: preserve-3d;
   }
-  .face {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    backface-visibility: hidden;
-  }
-  .heads {
-    background-color: rgb(200, 255, 0);
-    z-index: 2;
-    transform: rotateY(0deg);
-  }
-  .tails {
-    background-color: yellow;
-    z-index: 1;
-    transform: rotateY(180deg);
-  }
- */
+  
 
