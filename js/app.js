@@ -2,8 +2,8 @@
 
 PLAYER_TURN = {
     'null': '',
-    '1' : 'red-piece',
-    '-1' : 'yellow-piece'
+    '1' : 'yellow-piece',
+    '-1' : 'red-piece'
 }
 
 const boardCols = [
@@ -36,6 +36,7 @@ const gridBoxes = document.querySelectorAll('.grid > div')
 const resetBtn = document.getElementById('reset')
 const howToPlay = document.getElementById('how-to')
 const winMsg = document.getElementById('winMsg')
+const messageDiv = document.getElementById('message')
 
 /*----- event listeners -----*/ 
 
@@ -70,8 +71,9 @@ function setPiece (e) {
         const clickedDiv = document.getElementById(divID)
         clickedDiv.classList.add(`${PLAYER_TURN[turn]}`)
             if(checkWin(PLAYER_TURN[turn])){
-                alert(`${PLAYER_TURN[turn] + ' has won!'}`);
+                messageDiv.innerHTML = (`${PLAYER_TURN[turn] + ' has won!'}`);
                 winner = PLAYER_TURN[turn]
+                console.log(winner)
             }
             turn *= -1
     render();   
@@ -86,7 +88,20 @@ function checkValid(n) {
 
 function render () {
     gridBoxes.forEach((cell, idx) => {
-
+    // if(checkWin === true) {
+    // console.log('game over')
+    //     }
+    // })
+    if (!winner) {
+        // 4.2.2.1) If winner has a value other than null (game still in progress), render whose turn it is - use the color name for the player, converting it to upper case.
+        messageDiv.innerText = `It is ${PLAYER_TURN[turn]}'s turn!`
+      } else if (winner === true) {
+        // 4.2.2.2) If winner is equal to 'T' (tie), render a tie message.
+        messageDiv.innerText = `Cat's game`
+      } else {
+        // 4.2.2.3) Otherwise, render a congratulatory message to which player has won - use the color name for the player, converting it to uppercase.
+        messageDiv.innerText = `${PLAYER_TURN[isWinner]} Wins the Game!`
+      }
     })
 }
 
@@ -102,7 +117,6 @@ function checkWin (p) {
             } else {
                 combo = 0;
             }
-            // console.log(`columns: ${combo}`)
             if(combo >= 4) {
                 return true;
             }
@@ -120,7 +134,6 @@ function checkWin (p) {
             } else {
                 combo = 0;
             }
-            // console.log(`rows + ${combo}`)
             if(combo >= 4) {
                 return true;
             }
@@ -193,3 +206,5 @@ function init () {
 }
 
 init();
+
+// https://www.youtube.com/watch?v=sg763OgGdqI

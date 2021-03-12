@@ -7,7 +7,8 @@ body {
     /* background-color: white; */
     background-image: url(../images/wallpapertip_table.jpg);
     background-repeat:inherit;
-    background-size: 100%
+    background-size: 100%;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     
 
 }
@@ -47,6 +48,12 @@ h1 {
                    0 36px 36px rgba(0,0,0,.15);
   }
 
+#message {
+    margin: auto;
+    color: white;
+    font-size: 3rem;
+}
+
 /* Game board  elements  */
 
 .grid {
@@ -55,12 +62,12 @@ h1 {
     grid-template-rows: repeat(6, 9vmin);
     background-color: rgb(31, 13, 136);
     /* margin: 0 0; */
-    justify-content: center;
+    /* justify-content: center; */
     padding: 1%;
     gap: 1.5%;
-    width: calc(61vmin + 13%);
+    width: calc(69vmin);
     height: calc(60vmin);
-    /* width: 112.5%; */
+    
     
 }
 
@@ -119,50 +126,167 @@ h1 {
 /* Below game board elements  */
 
 
-#menu {
+/* #menu {
     margin-top: 3vmin;
     display: flex;
-}
+} */
+
 
 .player {
     width: 20vmin;
     height: 10vmin;
 }
 
-#display {
-    width: 30vmin;
+#menu {
+    display: grid;
+    width: calc(69vmin);
+    margin-top: 3vmin;
+    margin-bottom: 5vmin;;
+    justify-content: center;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 100%;
+    grid-template-areas: 
+    "one reset two";
+
 }
 
+/* #display {
+    width: 30vmin;
+} */
+
 #center-menu{
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
-    border: 0;
+    grid-area: reset;
+}
+
+#left-menu{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-area: one;
 }
 
 #one {
+    display: grid;
     height: 8vmin;
     width: 8vmin;
     border-radius: 50%;
     background-color: yellow;
-    background-color: red;
-    display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    /* grid-area: one; */
+}
+
+#right-menu{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-area: two;
 }
 
 #two {
+    display: grid;
     height: 8vmin;
     width: 8vmin;
     border-radius: 50%;
-    background-color: yellow;
-    background-color: yellow;
+    background-color: red;
+    justify-content: center;
+    /* grid-area: two; */
+}
+
+/* #inner-circle {
+    border-radius: 50%;
+    height: 6vmin;
+    width: 6vmin;
     display: flex;
     justify-content: flex-end;
-}
+} */
 
 #winMsg {
-    display: none;
-    border: none;
+    display: flex;
+    height: 50vmin;
+    width: 50vmin;
+    background-color: green;
 }
 
 
+/* 
+emboss "4" onto coins
+https://www.midwinter-dg.com/permalink-7-great-css-based-text-effects-using-the-text-shadow-property_2011-03-03.html
+
+https://stackoverflow.com/questions/35607055/html5-rotate-animation-how-to-show-the-other-side-of-the-coin
+
+@keyframes rotation {
+    0% {
+      transform: rotate3d(0, 1, 0, 0deg);
+    }
+    50% {
+      transform: rotate3d(0, 1, 0, 180deg);
+    }
+    100% {
+      transform: rotate3d(0, 1, 0, 360deg);
+    }
+  }
+  .container-two {
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    perspective: 1000;
+    margin: 1em auto;
+  }
+  .coin {
+    position: relative;
+    top: 25px;
+    left: 25px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    animation-name: rotation;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 2.5s;
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+  }
+  .face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    backface-visibility: hidden;
+  }
+  .heads {
+    background-color: rgb(200, 255, 0);
+    z-index: 2;
+    transform: rotateY(0deg);
+  }
+  .tails {
+    background-color: yellow;
+    z-index: 1;
+    transform: rotateY(180deg);
+  }
+ */
+
+#reset {
+    display:flex;
+    width:6vmin;
+    height:6vmin;
+    line-height:80px;
+    border: 2px solid #f5f5f5;
+    border-radius: 50%;
+    color:#f5f5f5;
+    align-items: center;
+    text-align:center;
+    text-decoration:none;
+    background: rgb(31, 13, 136);
+    box-shadow: 0 0 3px gray;
+    font-size:.7em;
+    font-weight:bold;
+}
+#reset:hover {
+    background: #f11717;
+}

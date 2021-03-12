@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connect 4</title>
     <!-- <link rel="shortcut icon" href="../images/favicon.png" /> -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/r-apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/r-apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/r-favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/r-favicon-16x16.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -16,11 +16,11 @@
 
 </head>
 <body>
+    <div id="winMsg"></div>
     <button id='play'>Play Sound</button>
         <h1>Connect 4</h1>
         
-        <div id="yellow-piece"></div>
-        <div id="red-piece"></div>
+        <div id="message">test</div>
         
         <div id="board-bg">
             <!-- <div id="column-drop">
@@ -79,16 +79,30 @@
         </div>
         <!-- Below Game elements -->
         <container id="menu">
-            <div class="player" id="one"></div>
-            <div id="display">
+            <div id="left-menu"><div class="player" id="one"></div></div>
+            <!-- <div id="display"> -->
                 <div id="center-menu">
-                    <button id="reset">Reset</button>
-                    <button id="how-to">How to Play</button>
+                    <button id="reset">RESET</button>
+                    
+
+                    
+                    <!-- <button id="how-to">How to Play</button> -->
                 </div>
             </div>
-            <div class="player" id="two"></div>
+            <div id="right-menu"><div class="player" id="two"></div></div>
         </container>
-        <div id="winMsg"></div>
+        
+
+        <!-- <div class="container-two">
+            <div class="coin">
+              <div class="face heads">
+                Hey!
+              </div>
+              <div class="face tails">
+                Ho!
+              </div>
+            </div>
+          </div> -->
     
 </body>
 </html>
