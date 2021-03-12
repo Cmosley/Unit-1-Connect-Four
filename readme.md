@@ -17,7 +17,7 @@
 ### Here is an initial wire-frame of how the playing field will be set up:
 ![Wireframe](images/wire-connect4.jpg)
 ### Here is what the playing field looks like, post styling:
-![Connect Four board currently](images/hand-connect4.jpg)
+![Connect Four board currently](images/game-v1.png)
 ## Technology Implemented:
 - JavaScript
 - CSS
