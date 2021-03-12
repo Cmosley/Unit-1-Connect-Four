@@ -52,8 +52,6 @@ function gameDivID () {
     })
 }
 
-
-// add new values here 
 function setPiece (e) {
     // gets index of cell to 'drop' piece into
     if (grid[e.target.id] === null){ 
@@ -91,7 +89,6 @@ function checkValid(n) {
             return true;
         }
     }
-    // console.log(checkValid) 
     return false;
 }
 
@@ -186,11 +183,8 @@ function checkWin (p) {
         topLeft = i * 7 + 7;
         topRight = topLeft + 3;
     }
-
     return false;
 }        
-
-// init function 
 
 function init () {
     count = 0;
@@ -216,8 +210,6 @@ function init () {
     winner = 0;
     render();
     gameDivID();
-    
-    
 }
 
 init();
