@@ -10,7 +10,7 @@
 ##
 ##
 ## Motivation:
-### My partnet and I are really competitive when we play board games with each other, neither of us like to lose, which is good for me because I can usually win most the time. However, Connect Four is my achillies heel, my partner absolutley owns mental space in my head with how much I lose at Connect Four. After I implement the minimax AI and hone my skills, I will have my revenge tour! 
+### My partner and I are really competitive when we play board games with each other, neither of us like to lose, which is good for me because I can usually win most the time. However, Connect Four is my achillies heel, my partner absolutley owns mental space in my head with how much I lose at Connect Four. After I implement the minimax AI and hone my skills, I will have my revenge tour! 
 ## Prototype View:
 ### Here is my initial drawing of the playing field:
 ![Connect Four layout and logic brainstorm](images/hand-connect4.jpg)
@@ -23,8 +23,10 @@
 - CSS
 - HTML
 - Git 
+- Surge
 
 ## Credits:
+- Functionality structures: https://github.com/SteamCodeYT/JavaScript-Connect-4
 - Background Img https://www.wallpapertip.com/wpic/TxwRho_wood-table-blur-background/
 - Coin Rotation https://stackoverflow.com/questions/35607055/html5-rotate-animation-how-to-show-the-other-side-of-the-coin
 - H1 Styling https://codepen.io/fielding/pen/wYPRjj

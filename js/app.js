@@ -33,7 +33,6 @@ const linkFav = document.querySelector("link[rel~='icon']")
 
 gridBoxes.forEach(circle => {
     circle.addEventListener('click', setPiece);
-    // console.log(gridBoxes)
 });
 
 resetBtn.addEventListener('click', function() {
@@ -48,8 +47,8 @@ function gameDivID () {
     gridBoxes.forEach(cells => {
         cells.setAttribute('id', count)
         cells.setAttribute('data-piece', 0)
+        cells.setAttribute('class', 'cell')
         count++;
-        // console.log(cells)
     })
 }
 
@@ -74,24 +73,6 @@ function setPiece (e) {
         dropSound.play() 
         }
     }
-    if (turn === 1) {
-    playerOne.classList.add('coin')
-    playerOne.innerHTML = "GO"
-    playerTwo.classList.remove('coin')
-    playerTwo.innerHTML = ""
-    gridBox.classList.add('shadow-yellow')
-    gridBox.classList.remove('shadow-red')
-    linkFav.href = "images/y-favicon-32x32.png"
-
-    } else {
-        playerTwo.classList.add('coin')
-        playerTwo.innerHTML = "GO"
-        playerOne.classList.remove('coin')
-        playerOne.innerHTML = ""
-        gridBox.classList.remove('shadow-yellow')
-        gridBox.classList.add('shadow-red')
-        linkFav.href = "images/r-favicon-32x32.png"
-    }
 }
 
 function checkValid(n) {
@@ -115,17 +96,24 @@ function checkValid(n) {
 }
 
 function render () {
-    gridBoxes.forEach((cell, idx) => {
-    if (!winner ) {
-        
-      } else if (winner === 2) {
-        // 4.2.2.2) If winner is equal to 'T' (tie), render a tie message.
-        messageDiv.innerText = `Nobody wins!`
-      } else {
-        // 4.2.2.3) Otherwise, render a congratulatory message to which player has won - use the color name for the player, converting it to uppercase.
-        messageDiv.innerText = `${PLAYER_TURN[i]} is the winner!`
-      }
-    })
+    if (turn === 1) {
+        playerOne.classList.add('coin')
+        playerOne.innerHTML = "GO"
+        playerTwo.classList.remove('coin')
+        playerTwo.innerHTML = ""
+        gridBox.classList.add('shadow-yellow')
+        gridBox.classList.remove('shadow-red')
+        linkFav.href = "images/y-favicon-32x32.png"
+
+    } else {
+        playerTwo.classList.add('coin')
+        playerTwo.innerHTML = "GO"
+        playerOne.classList.remove('coin')
+        playerOne.innerHTML = ""
+        gridBox.classList.remove('shadow-yellow')
+        gridBox.classList.add('shadow-red')
+        linkFav.href = "images/r-favicon-32x32.png"
+    }
 }
 
 function checkWin (p) {
@@ -215,9 +203,6 @@ function init () {
         null,null,null,null,null,null,null,
         null,null,null,null,null,null,null,
     ];
-    gridBoxes.forEach(cells => {
-        if(cells.setAttribute('class', 'cell'));
-    })
     // reset player turn styling 
     playerOne.classList.add('coin')
     playerOne.innerHTML = "GO"
