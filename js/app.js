@@ -26,6 +26,8 @@ PLAYER_TURN = {
 
 const dropSound = new Audio("../audio/piece-drop.mp3"); 
 const resetSound = new Audio("../audio/reset-drop.mp3"); 
+const winSound = new Audio("../audio/you-win.mp3"); 
+
 
 /*----- app's state (variables) -----*/ 
 let grid, winner, turn, count
@@ -57,6 +59,7 @@ resetBtn.addEventListener('click', function() {
 function gameDivID () {
     gridBoxes.forEach(cells => {
         cells.setAttribute('id', count)
+        cells.setAttribute('data-piece', 0)
         count++;
         // console.log(cells)
     })
@@ -67,72 +70,57 @@ function gameDivID () {
 function setPiece (e) {
     // gets index of cell to 'drop' piece into
     if (grid[e.target.id] === null){ 
+        if(checkValid(e.target.id) === true){
         const clickedDiv = document.getElementById(e.target.id)
-        // checkValid(e.target.id)
-        const checkDiv = document.getElementById(e.target.id);
-        const checkDivBelow = document.getElementById(e.target.id + 7);
-        if(checkDiv.classList.contains('red-piece') || checkDiv.classList.contains('yellow-piece')){
-            if(checkDiv <= 35){
-                // return true
-                console.log(`checked div: ${checkDiv}`); //true
+        // clickedDiv.classList.add(`${PLAYER_TURN[turn]}`)
+        clickedDiv.setAttribute('data-piece', turn)
+        clickedDiv.classList.add(`${PLAYER_TURN[turn]}`)
+            if(checkWin(PLAYER_TURN[turn])){
+            messageDiv.innerHTML = (`${PLAYER_TURN[turn] + ' has won!'}`);
+            winner = PLAYER_TURN[turn]
+            winSound.play()
+            // console.log(winner)
             }
-            if(checkDivBelow.classList.contains('red-piece' || 'yellow-piece')){
-                return true;
-            }
-            return false;
-        }
-        
-        console.log(clickedDiv)
-            clickedDiv.classList.add(`${PLAYER_TURN[turn]}`)
-                if(checkWin(PLAYER_TURN[turn])){
-                    messageDiv.innerHTML = (`${PLAYER_TURN[turn] + ' has won!'}`);
-                    winner = PLAYER_TURN[turn]
-                    console.log(winner)
-                }
-                turn *= -1
+            turn *= -1
         render();   
         dropSound.play() 
+        }
     }
 }
 
-// function checkValid(n) {
-//     let id = parseInt(n);
-//     const checkDiv = document.getElementById(id);
-//     const checkDivBelow = document.getElementById(id + 7);
-//     console.log(checkDiv)
-//     console.log(checkDivBelow)
-//     if(winner){
-//         return false;
-//     }
-    // if(checkDiv.classList.contains('red-piece' || 'yellow-piece')){
-    //     if(id >= 35){
-    //         console.log(checkDiv)
-    //         return true;
-    //     }
-    //     if(checkDivBelow.classList.contains('red-piece' || 'yellow-piece')){
-    //         return true;
-    //     }
-    // }
-    // return false;
-// }
+function checkValid(n) {
+    let id = parseInt(n);
+    const checkDiv = document.getElementById(id);
+    const checkDivBelow = document.getElementById(id + 7);
+    if(winner !== 0){
+        return false
+    }
+    console.log(winner)
+    if(checkDiv.getAttribute('data-piece') === "0"){ 
+        if(id >= 35){
+            return true;
+        }
+        if(checkDivBelow.getAttribute('data-piece') !== "0"){
+            return true;
+        }
+    }
+    // console.log(checkValid) 
+    return false;
+}
 
 
 
 function render () {
     gridBoxes.forEach((cell, idx) => {
-    // if(checkWin === true) {
-    // console.log('game over')
-    //     }
-    // })
-    if (!winner) {
+    if (!winner ) {
         // 4.2.2.1) If winner has a value other than null (game still in progress), render whose turn it is - use the color name for the player, converting it to upper case.
         messageDiv.innerText = `GO ${PLAYER_TURN[turn]}!`
-      } else if (winner === true) {
+      } else if (winner === 2) {
         // 4.2.2.2) If winner is equal to 'T' (tie), render a tie message.
-        messageDiv.innerText = `Cat's game`
+        messageDiv.innerText = `Nobody wins!`
       } else {
         // 4.2.2.3) Otherwise, render a congratulatory message to which player has won - use the color name for the player, converting it to uppercase.
-        messageDiv.innerText = `${PLAYER_TURN[isWinner]} is the winner!`
+        messageDiv.innerText = `${PLAYER_TURN[i]} is the winner!`
       }
     })
 }
@@ -171,14 +159,12 @@ function checkWin (p) {
             }
         }
         combo = 0;
-        console.log(combo)
     }
 
     // check diag
     // scans the grid in a 4x4 square
     let topLeft = 0;
     let topRight = topLeft + 3;
-    console.log(topLeft)
     for(let i = 0; i <3; i++){
         for(let k = 0; k < 4; k++){
             if(gridBoxes[`${i+k+topLeft}`].className.includes(p)
@@ -229,7 +215,7 @@ function init () {
     gridBoxes.forEach(cells => {
         if(cells.setAttribute('class', 'cell'));
     })
-    winner = false;
+    winner = 0;
     render();
     gameDivID();
     
